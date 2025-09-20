@@ -4,7 +4,7 @@ pipeline {
         stage('build') { //stage定义一个阶段
             steps {
             withDockerContainer(
-            args: '-v /usr/local/Cellar/maven/3.9.11/libexec/conf:/usr/share/maven/conf -v /usr/local/Cellar/maven/3.9.11/libexec/conf:/root/.m2',
+
             image:'3.9.11-amazoncorretto-8') {
              sh 'ls'
              sh 'pwd'
