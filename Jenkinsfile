@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages { //所有阶段
-     stage('Check Docker Installation') {
+     stage('检查 docker') {
                 steps {
                     // 验证 Docker 命令是否存在
                     sh 'docker --version'
