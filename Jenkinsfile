@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages { //所有阶段
-        stage('Check Docker Installation'){
-            sh 'docker --version'
-          }
+      stage('build') { //stage定
+      sh 'docker -version'
+      }
         stage('build') { //stage定义一个阶段
             steps {
             withDockerContainer(
@@ -15,15 +15,6 @@ pipeline {
             }
               }
                 }
-        stage('package') {
-            steps {
-                echo '打包  ok...'
-            }
-        }
-        stage('deploy') {
-            steps {
-                echo 'deploy ok...'
-            }
-        }
+
     }
 }
