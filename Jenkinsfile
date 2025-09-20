@@ -3,7 +3,9 @@ pipeline {
     stages { //所有阶段
         stage('build') { //stage定义一个阶段
             steps {
-                echo 'Hello World'
+                sh 'ls'
+                sh 'pwd'
+                sh 'mvn clean build'
             }
         }
         stage('package') {
