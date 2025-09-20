@@ -1,20 +1,10 @@
 pipeline {
     agent any
     stages { //所有阶段
-      stage('build') { //stage定
-      sh 'docker -version'
-      }
-        stage('build') { //stage定义一个阶段
+        stage('构建') { //stage定义一个阶段
             steps {
-            withDockerContainer(
-            args: '-v /usr/local/Cellar/maven/3.9.11/libexec/conf:/usr/share/maven/conf -v /usr/local/Cellar/maven/3.9.11/libexec/conf:/root/.m2',
-            image:'maven:3.9.11-amazoncorretto-24-debian') {
-             sh 'ls'
-             sh 'pwd'
-             sh 'mvn clean'
+                sh 'mvn clean build'
             }
-              }
-                }
-
+        }
     }
 }
